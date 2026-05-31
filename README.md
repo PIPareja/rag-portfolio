@@ -17,6 +17,12 @@
 
 ---
 
+## 🎥 Demo
+
+[![Demo RAG Portfolio](https://img.shields.io/badge/▶_Ver_Demo-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/MMvURJdY_ig)
+
+---
+
 ## 🔄 Flujo del sistema
 
 **Ingest (indexación del CV):**
