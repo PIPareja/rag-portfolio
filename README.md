@@ -19,16 +19,18 @@
 
 ## 🔄 Flujo del sistema
 
-📄 CV en texto
-└── chunking (división en fragmentos)
-└── embeddings via Gemini API
-└── almacenamiento en PostgreSQL + pgvector
-💬 Pregunta del usuario
-└── embedding de la pregunta
-└── búsqueda por similitud coseno (operador <=>)
-└── top 3 chunks más relevantes
-└── prompt enriquecido a Gemini
-└── respuesta en lenguaje natural
+**Ingest (indexación del CV):**
+1. 📄 Texto del CV
+2. ✂️ Chunking — división en fragmentos de ~500 caracteres
+3. 🔢 Embeddings via Gemini API — cada chunk se convierte en un vector de 3072 dimensiones
+4. 🗄️ Almacenamiento en PostgreSQL + pgvector
+
+**Chat (respuesta a preguntas):**
+1. 💬 Pregunta del usuario
+2. 🔢 Embedding de la pregunta
+3. 🔍 Búsqueda por similitud coseno (`<=>`) — top 3 chunks más relevantes
+4. 📝 Prompt enriquecido enviado a Gemini
+5. 💡 Respuesta en lenguaje natural
 
 ---
 
@@ -54,18 +56,20 @@
 
 ## 📁 Estructura
 
+```
 rag-portfolio/
 ├── backend/
 │   ├── src/
-│   │   ├── ingest/       # Chunking + embeddings + guardado en BD
-│   │   ├── chat/         # Búsqueda vectorial + generación de respuesta
-│   │   └── prisma/       # Conexión a PostgreSQL
+│   │   ├── ingest/        # Chunking + embeddings + guardado en BD
+│   │   ├── chat/          # Búsqueda vectorial + generación de respuesta
+│   │   └── prisma/        # Conexión a PostgreSQL
 │   ├── prisma/
 │   │   └── schema.prisma
 │   └── docker-compose.yml
 └── frontend/
-└── src/
-└── App.tsx       # Interfaz de chat
+    └── src/
+        └── App.tsx         # Interfaz de chat
+```
 
 ---
 
