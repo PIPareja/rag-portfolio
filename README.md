@@ -19,7 +19,7 @@
 
 ## 🎥 Demo
 
-[![Demo RAG Portfolio](https://img.shields.io/badge/▶_Ver_Demo-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/MMvURJdY_ig)
+[![Demo RAG Portfolio](https://img.youtube.com/vi/MMvURJdY_ig/maxresdefault.jpg)](https://youtu.be/MMvURJdY_ig)
 
 ---
 
