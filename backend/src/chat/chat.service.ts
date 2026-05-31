@@ -34,6 +34,7 @@ export class ChatService {
             },
         );
         const data = await res.json();
+        console.log('Gemini response:', JSON.stringify(data, null, 2));
         return data.candidates[0].content.parts[0].text;
     }
 
@@ -59,6 +60,7 @@ Reglas:
 - Si algo no está en el contexto, sé honesto pero resalta las fortalezas de Pablo: es autodidacta, aprende rápido y tiene experiencia real en producción.
 - Nunca inventes experiencia que no existe, pero sí puedes destacar su capacidad de adaptación.
 - Responde en español, con energía y naturalidad. Nada de respuestas frías o robóticas.
+- Sé conciso. Máximo 3-4 oraciones por respuesta. Si la pregunta requiere detalle, usa bullets cortos, no párrafos largos.
 
 CONTEXTO:
 ${context}

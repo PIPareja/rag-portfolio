@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import axios from 'axios'
+import ReactMarkdown from 'react-markdown'
 
 interface Message {
   role: 'user' | 'assistant'
@@ -95,9 +96,9 @@ function App() {
               backgroundColor: msg.role === 'user' ? '#1a1a2e' : 'white',
               color: msg.role === 'user' ? 'white' : '#333',
               boxShadow: '0 1px 4px rgba(0,0,0,0.1)',
-              whiteSpace: 'pre-wrap'
+              textAlign: 'left'
             }}>
-              {msg.content}
+              <ReactMarkdown>{msg.content}</ReactMarkdown>
             </div>
           </div>
         ))}
