@@ -1,0 +1,17 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+datasource db {
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  extensions = [vector]
+}
+
+model DocumentChunk {
+  id        Int                         @id @default(autoincrement())
+  content   String
+  embedding Unsupported("vector(3072)")?
+  createdAt DateTime                    @default(now())
+}
